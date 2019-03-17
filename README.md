@@ -9,7 +9,7 @@
 3. [型](entity/03_type.md)
 4. [リテラル](entity/04_literal.md)
 5. [四則演算](entity/05_operation.md)
-6. 変数
+6. [変数](entity/06_variable.md)
 7. 関数
 8. プリプロセッサ
 9. 標準出力
