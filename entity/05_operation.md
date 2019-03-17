@@ -61,9 +61,7 @@ a = b = c;
 
 ## 式
 
-Cの規格書n1570によれば式というのはこう定義されている。
-
->An *expression* is a sequence of operators and operands that specifies computation of a value, or that designates an object or function, or that generates side effects, or that performs a combination thereof.
+>式（expression）は，演算子及びオペランドの列とする。式は，値の計算を指定するか，オブジェクト若しくは関数を指し示すか，副作用を引き起こすか，又はそれらの組合せを行う。
 
 使いまわしで申し訳ないが、もう一度以下のコードを見てほしい。
 
@@ -72,5 +70,7 @@ int main(void){
     int answer = 7 * (3 + 9) / 2 - 10;
 }
 ```
+
+`answer`の初期化式`7 * (3 + 9) / 2 - 10`はまさに演算子とオペランドの列で、値の計算だ。よってこれは式だ。
 
 
