@@ -58,3 +58,19 @@ a = b = c;
 ```
 
 さあこのコードでは`a`も`b`も`c`も`4`になる。なぜなら`=`は右結合だからだ。
+
+## 式
+
+Cの規格書n1570によれば式というのはこう定義されている。
+
+>An *expression* is a sequence of operators and operands that specifies computation of a value, or that designates an object or function, or that generates side effects, or that performs a combination thereof.
+
+使いまわしで申し訳ないが、もう一度以下のコードを見てほしい。
+
+```c
+int main(void){
+    int answer = 7 * (3 + 9) / 2 - 10;
+}
+```
+
+
