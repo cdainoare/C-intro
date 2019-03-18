@@ -116,7 +116,7 @@ int main(){}
 
 ```
 
-さあ早速コンパイルしてみよう。コンパイラからエラーが吐かれたのではないだろうか。筆者の環境では以下のようなエラーが出た。
+さあ早速コンパイルしてみよう。リンカからエラーが吐かれたのではないだろうか。筆者の環境では以下のようなエラーが出た。
 
 ```
 >clang global_variable1.c global_variable2.c
@@ -125,7 +125,7 @@ a.exe : fatal error LNK1169: 1 つ以上の複数回定義されているシン�
 clang.exe: error: linker command failed with exit code 1169 (use -v to see invocation)
 ```
 
-つまり`global_variable`が2回以上定義されているからコンパイルエラーになる。Cでは**単一定義規則** (ODR; one definition rule) というルールを満たさねばならない。そのため複数回定義されるようなシンボルは**ill-formed**だ。
+つまり`global_variable`が2回以上定義されているからリンクエラーになる。Cでは**単一定義規則** (ODR; one definition rule) というルールを満たさねばならない。そのため複数回定義されるようなシンボルは**ill-formed**だ。
 
 いや待て、`global_variable`は`global_varible.h`で一回しか定義していない！と思っただろうか。確かに私たちがソースコードに`int global_variable`と書いたのは1回きりだがそのあとに二つのソースファイルから`#include`している。そのプリプロセッサが処理された時ソースファイルは以下のようになる。
 
