@@ -38,7 +38,7 @@ current_dir
 #define MY_NAME "ouchiminh"
 
 int main(void) {
-    printf(MY_NAME);
+    puts(MY_NAME);
 }
 
 ```
