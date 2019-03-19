@@ -11,7 +11,7 @@
 5. [四則演算](entity/05_operation.md)
 6. [変数](entity/06_variable.md)
 7. [関数](entity/07_function.md)
-8. プリプロセス
+8. [プリプロセス](entity/08_preprocess.md)
 9. 標準出力
 10. 標準入力
 11. printfデバッグ
