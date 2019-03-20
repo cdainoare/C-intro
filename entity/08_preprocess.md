@@ -106,6 +106,21 @@ int main(void) {
 
 `#if !defined`の短縮形。続く単語がマクロで定義されていない場合条件は真となる。
 
+----
+
+例
+
+```c
+#define COMPILE_FLAG 1
+
+#if COMPILE_FLAG
+int main(void) { puts("1!"); }
+#elif COMPILE_FLAG == 2
+int main(void) { puts("2!"); }
+#endif
+
+```
+
 ## #pragma
 
 プラグマ命令はコンパイラ独自の命令だ。そのためここでは扱わない。詳しくは使っているコンパイラの制作者に尋ねてほしい。
