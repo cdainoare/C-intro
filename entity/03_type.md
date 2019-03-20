@@ -21,20 +21,20 @@ Cの基本型(=言語によって提供されている型)には大きく分け�
 
 の二つだ。まずは整数型について見ていく。
 
-整数型とは文字通り、整数の値を表現できる種類のものだ。型によって占有するメモリ量が異なり、それによって表現できる値の幅が変わる。例えば、`char`なら256種類の整数を表現でき、`int`なら約41億種類の整数を表現することができる。ここで整数型の一覧を見てみよう。但し型のサイズはx86_64環境での値とする。
+整数型とは文字通り、整数の値を表現できる種類のものだ。型によって占有するメモリ量が異なり、それによって表現できる値の幅が変わる。例えば、`char`なら256種類の整数を表現でき、`int`なら約41億種類の整数を表現することができる。ここで整数型の一覧を見てみよう。表現できる値はLP64環境またはLLP64環境での値とする。
 
 |型名|サイズ|表現できる値|
 |:-|----:|---------:|
-|signed char|1 byte|-128~127|
-|unsigned char|1 byte|0~255|
-|signed short|2 byte|-32768~32767|
-|unsigned short|2 byte|0~65535|
-|signed int|4 byte|-2147483648~2147483647|
-|unsigned int|4 byte|0~4294967295|
-|signed long|Winでは 4 byte, Linuxなどでは 8 byte|intまたはlong longと同じ|
-|unsigned long|Winでは 4 byte, Linuxなどでは 8 byte|unsigned intまたはunsigned long longと同じ|
-|signed long long|8 byte|-9223372036854775808~9223372036854775807|
-|unsigned long long|8 byte|0~18446744073709551615|
+|signed char|8 bit以上int以下|-128~127|
+|unsigned char|同上|0~255|
+|signed short|16 bit以上int以下|-32768~32767|
+|unsigned short|同上|0~65535|
+|signed int|16 bit 以上|-2147483648~2147483647|
+|unsigned int|同上|0~4294967295|
+|signed long|32 bit以上|intまたはlong longと同じ|
+|unsigned long|同上|unsigned intまたはunsigned long longと同じ|
+|signed long long|64 bit以上|-9223372036854775808~9223372036854775807|
+|unsigned long long|同上|0~18446744073709551615|
 
 ちなみに整数型では`signed`と`unsigned`を省略できる。それを省略した場合ほとんどの場合で暗黙的に`signed`になるが、`char`に限っては符号を持つか持たないかは処理系定義である。GCCではx86_64向けにコンパイルすればデフォルトで符号付きになるが、ARMでは符号なしになる。また、`char`と`signed char`と`unsigned char`はそれぞれ異なる型である。`signed`が付く型が`signed`が付かない型と等しくないのは`signed char`と`char`だけである。
 
