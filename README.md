@@ -12,11 +12,11 @@
 6.  [変数](entity/06_variable.md)
 7.  [関数](entity/07_function.md)
 8.  [プリプロセス](entity/08_preprocess.md)
-9.  [ファイル入出力](entity/09_fileio.md)
-10. 標準入出力
-11. printfデバッグ
-12. ビット演算
-13. 条件分岐
+9.  条件分岐
+10. [ファイル入出力](entity/10_fileio.md)
+11. 標準入出力
+12. printfデバッグ
+13. ビット演算
 14. goto文
 15. ループ
 16. 再帰
