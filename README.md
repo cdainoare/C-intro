@@ -12,9 +12,9 @@
 6.  [変数](entity/06_variable.md)
 7.  [関数](entity/07_function.md)
 8.  [プリプロセス](entity/08_preprocess.md)
-9.  ビット演算
+9.  [ビット演算](entity/09_bitoperation.md)
 10. 条件分岐
-11. [テキストファイル入出力](entity/11_fileio.md)
+11. [テキストファイル入出力](entity/11_textfileio.md)
 12. バイナリファイル入出力
 13. 標準入出力
 14. printfデバッグ
