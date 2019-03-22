@@ -16,7 +16,7 @@
 10. [選択文](entity/10_selection_statements.md)
 11. [テキストファイル入出力](entity/11_textfileio.md)
 12. バイナリファイル入出力
-13. 標準入出力
+13. [標準入出力](entity/13_stdio.md)
 14. printfデバッグ
 15. goto文
 16. ループ
