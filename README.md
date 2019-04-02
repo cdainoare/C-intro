@@ -21,7 +21,7 @@
 15. goto文
 16. ループ
 17. [再帰](entity/17_recursion.md)
-18. ポインタ
+18. [ポインタ](entity/18_pointer.md)
 19. 配列
 20. 文字列
 21. 動的メモリ

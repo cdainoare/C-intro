@@ -4,17 +4,17 @@
 
 // search number in range of [lower, upper).
 int guess(const int lower, const int upper) {
-    if(upper - lower == 1) return lower;
-    int m = (upper + lower) / 2;
+    if(upper - lower <= 1) return lower;
+    const int m = (upper + lower) / 2;
     char answer;                // ユーザーの回答
-    printf_s(u8"is the number greater than %d? y/n\n", m);
+    printf_s(u8"is the number greater than or equal to %d? y/n\n", m);
     scanf_s("%c", &answer);
 
     // 改行文字の読み捨て
     while (getchar() != '\n');
 
     return answer == 'y'        // 答えがイエスなら
-        ? guess(m + 1, upper)   // [m + 1, upper)でもう一度
+        ? guess(m, upper)       // [m + 1, upper)でもう一度
         : guess(lower, m);      // 答えがノーなら[lower, m)でもう一度
 }
 
