@@ -57,21 +57,31 @@ int add(unsigned int* result_buffer, unsigned int a, unsigned int b) {
 ```c
 int a = 0;
 int b = 1;
-const int* p1 = &a;         // int const*でもよい
-int* const p2 = &a;
-const int* const p3 = &a;   // int const * constでもよい
+int* p0 = &a;
+const int* p1 = &a;         // int const*でもよい ポインタの指すオブジェクトがconst
+int* const p2 = &a;         // ポインタ自体がconst
+const int* const p3 = &a;   // int const * constでもよい ポインタ自体とポインタの指すオブジェクトがconst
+
+p0 = &b;                    // 合法
 p1 = &b;                    // 合法
 p2 = &b;                    // error! p2自体は読み取り専用
 p3 = &b;                    // error! p3自体は読み取り専用
 
+*p0 = 2;                    // 合法
 *p1 = 2;                    // error! p1が指す先は読み取り専用
 *p2 = 2;                    // 合法
 *p3 = 2;                    // error! p3が指す先は読み取り専用
 
+p0 = p1;                    // error! p1のconst属性をはがすことはできない
+p0 = p2;                    // error! same as above
+p0 = p3;                    // error! same as above
+p1 = p0;                    // 合法
 p1 = p2;                    // 合法
 p1 = p3;                    // 合法
+p2 = p0;                    // error!
 p2 = p1;                    // error!
 p2 = p3;                    // error!
+p3 = p0;                    // error!
 p3 = p1;                    // error!
 p3 = p2;                    // error!
 ```
@@ -107,4 +117,27 @@ int main(void) {
 
 # エイリアシング
 
+複数の変数がメモリ上の同じ位置を参照していることをエイリアシングという。人間は愚かであるがゆえに、エイリアスになるべきでない変数をエイリアスにしてしまうことがある。
 
+```c
+long a;
+void foo(double* p) {
+    a = 0;
+    *p = 3.14;
+    bar(a);
+}
+
+foo((double*)&a);
+```
+
+上記のコードはとても正気の沙汰ではないが、浮動小数点数の実装を見たいといった場合にはもしかしたらこんなおかしなコードを書くことがあるかもしれない。
+
+問題なのはオプティマイザが`bar(a)`を`bar(0)`というように最適化してしまいかねないということだ。なぜなら、`int`と`double`は互換型ではないから、`*p`は`a`のエイリアスになり得ないためだ。事前に`a`には`0`が代入されているために、`a`のエイリアスになり得ない`*p`に何が代入されようと`bar()`の実引数は`0`以外にならないとオプティマイザは考えている。
+
+エイリアスになれる二つのオブジェクトは以下のいずれかの条件を満たすものだ。
+
+- 互換型か、`signed`、`unsigned`、`const`、`volatile`の組み合わせのみが異なる型同士
+- `struct`または`union`とそれが内部に含む型同士
+- 文字型 (例外的に`char*`、`signed char*`と`unsigned char*`だけはメモリ上のすべてのエイリアスになり得る)
+  
+以上の条件を満たさないエイリアスを作ることは発見しにくいバグを生むだろう。
