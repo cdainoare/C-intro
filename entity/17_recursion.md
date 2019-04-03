@@ -26,7 +26,7 @@ unsigned long sumup(unsigned int n) {
 
 - 関数呼び出しは遅いということ。
 
-    関数の呼び出しにはリターンアドレスや引数をスタックにプッシュしてから分岐命令を実行するというプロセスを踏む必要がある。
+    関数の呼び出しにはリターンアドレスや引数をスタックにプッシュしてからcallするというプロセスを踏む必要がある。
 
 - スタックには上限があるということ。
 
@@ -86,7 +86,7 @@ int guess(const int lower, const int upper) {
     while (getchar() != '\n');
 
     return answer == 'y'        // 答えがイエスなら
-        ? guess(m, upper)       // [m + 1, upper)でもう一度
+        ? guess(m, upper)       // [m, upper)でもう一度
         : guess(lower, m);      // 答えがノーなら[lower, m)でもう一度
 }
 

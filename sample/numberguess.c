@@ -14,7 +14,7 @@ int guess(const int lower, const int upper) {
     while (getchar() != '\n');
 
     return answer == 'y'        // 答えがイエスなら
-        ? guess(m, upper)       // [m + 1, upper)でもう一度
+        ? guess(m, upper)       // [m, upper)でもう一度
         : guess(lower, m);      // 答えがノーなら[lower, m)でもう一度
 }
 
