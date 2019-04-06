@@ -23,7 +23,7 @@
 17. [再帰](entity/17_recursion.md)
 18. [ポインタ](entity/18_pointer.md)
 19. [配列](entity/19_array.md)
-20. 文字列
+20. [文字列](entity/20_string.md)
 21. 動的メモリ
 22. 列挙型
 23. 構造体
