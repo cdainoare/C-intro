@@ -83,7 +83,7 @@ int a = 0;
 int b = 1;
 int* p0 = &a;
 const int* p1 = &a;         // int const*でもよい ポインタの指すオブジェクトがconst
-int* const p2 = &a;         // ポインタ自体がconst
+int* const p2 = &a;         // ポインタ自体がconst (参照する場所を変更できない)
 const int* const p3 = &a;   // int const * constでもよい ポインタ自体とポインタの指すオブジェクトがconst
 
 p0 = &b;                    // 合法
