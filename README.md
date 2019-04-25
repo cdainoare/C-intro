@@ -25,7 +25,7 @@
 19. [配列](entity/19_array.md)
 20. [文字列](entity/20_string.md)
 21. [動的メモリ](entity/21_dynamicmemory.md)
-22. 列挙型
+22. [列挙型](entity/22_enum.md)
 23. 構造体
 24. 共用体
 25. ビットフィールド
