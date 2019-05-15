@@ -22,10 +22,10 @@
 16. ループ
 17. [再帰](entity/17_recursion.md)
 18. [ポインタ](entity/18_pointer.md)
-19. 配列
-20. 文字列
-21. 動的メモリ
-22. 列挙型
+19. [配列](entity/19_array.md)
+20. [文字列](entity/20_string.md)
+21. [動的メモリ](entity/21_dynamicmemory.md)
+22. [列挙型](entity/22_enum.md)
 23. 構造体
 24. 共用体
 25. ビットフィールド
