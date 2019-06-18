@@ -99,19 +99,6 @@ p3 = &b;                    // error! p3自体は読み取り専用
 *p1 = 2;                    // error! p1が指す先は読み取り専用
 *p2 = 2;                    // 合法
 *p3 = 2;                    // error! p3が指す先は読み取り専用
-
-p0 = p1;                    // error! p1のconst属性をはがすことはできない
-p0 = p2;                    // 合法
-p0 = p3;                    // error! same as above
-p1 = p0;                    // 合法
-p1 = p2;                    // 合法
-p1 = p3;                    // 合法
-p2 = p0;                    // error!
-p2 = p1;                    // error!
-p2 = p3;                    // error!
-p3 = p0;                    // error!
-p3 = p1;                    // error!
-p3 = p2;                    // error!
 ```
 
 ## ヌルポインタ
